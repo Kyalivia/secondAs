@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang = "en">
+<head>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    @font-face {font-family: 'netmarbleB';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.1/netmarbleB.woff') format('woff');font-weight: normal;font-style: normal; } 
+    @font-face {font-family: 'Dovemayo-Medium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/Dovemayo-Medium.woff') format('woff');font-weight: normal;font-style: normal; } 
+    @font-face {font-family: 'Goyang';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Goyang.woff') format('woff');font-weight: normal;font-style: normal; }
+    </style>
+</head>
+
+<body>
+<h1 style = "font-family:'netmarbleB';">Result</h1>
+<p style = "font-family:'Goyang';">The text consists of <!--총단어수-->{{total}} words.</p>
+
+<h3 style = "font-family:'netmarbleB';" >Text : </h3>
+<!-- 입력받은 전체 텍스트 -->
+<p style = "font-family:'Dovemayo-Medium';">{{fulltext}}</p>
+
+<h3 style = "font-family:'netmarbleB';">Word Count : </h3>
+<!-- '단어' - '단어나온 횟수' -->
+{% for word, countTotal in dictionary %}
+<p style = "font-family:'Dovemayo-Medium';">{{ word }} - {{ countTotal }} </p>
+<br>
+{% endfor %}
+
+<a href="{% url 'home' %}" class = "btn btn-success"> Retry </a>
+</body>
